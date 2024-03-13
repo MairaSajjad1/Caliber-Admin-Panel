@@ -14,7 +14,7 @@ const AddSupplier = () => {
   const router = useRouter();
 
   const handleEditSupplierClick = () => {
-    router.push(`/contact/suppliers/createRider`); // Navigate to CreateUser page with user ID as query parameter
+    router.push(`/contact/suppliers/createSupplier`); // Navigate to CreateUser page with user ID as query parameter
   };
   return (
     <Button
