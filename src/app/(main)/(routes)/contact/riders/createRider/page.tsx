@@ -18,7 +18,7 @@ interface SelectedOption {
   value: string;
 }
 
-interface Riders {
+interface RiderCreateProps {
   rider?: RiderT;
   searchParams: {
     id: number;
@@ -26,7 +26,7 @@ interface Riders {
   riderId:number | undefined;
 }
 
-const RiderCreate: FC<Omit<Riders, 'riderId'>> = (props) => {
+const RiderCreate: FC<RiderCreateProps> = (props) => {
   const { id } = props.searchParams || {};
   const inputStyles =
     " w-full sm:w-full md:w-[48%] lg:w-[32%] my-2 mr-3 rounded-lg";
