@@ -1,5 +1,5 @@
 import { getServerAuthSession } from "@/lib/auth"
-import { AddBrandInput } from "@/validators/add-brand"
+import { AddPurchaseInput } from "@/validators/add-purchase"
 import axios from "axios"
 
 export const getAllPurchase = async () => {
@@ -39,14 +39,14 @@ export const deletePurchase = async (id: number, token: string) => {
     }
 }
 
-export const createBrand = async (brandData: AddBrandInput, token: string) => {
-    const { name, ...rest } = brandData
+export const createPurchase = async (PurchaseData: AddPurchaseInput, token: string) => {
+    const { type, ...rest } = PurchaseData
     const payload = {
        name: name,
         ...rest,
     }
     try {
-        const { data, status } = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/brands/create`, payload, {
+        const { data, status } = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/purchase/create`, payload, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
@@ -65,14 +65,14 @@ export const createBrand = async (brandData: AddBrandInput, token: string) => {
 }
 
 
-export const editBrand = async (brandData: AddBrandInput, id: number, token: string) => {
-    const { name,...rest } = brandData
+export const editPurchase = async (PurchaseData: AddPurchaseInput, id: number, token: string) => {
+    const { type,...rest } = PurchaseData
     const payload = {
         name: name,
         ...rest,
     }
     try {
-        const { data, status } = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/brands/update/${id}`, payload, {
+        const { data, status } = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/purchase/update/${id}`, payload, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,

@@ -2,11 +2,11 @@ import { getServerAuthSession } from "@/lib/auth"
 import { AddSubCategoryInput } from "@/validators/add-subcategory"
 import axios from "axios"
 
-export const getAllSubCategories = async () => {
+export const getAllSubCategories = async (id:number) => {
     try {
         const session = await getServerAuthSession()
         const { token, business_id } = session?.user!
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/categories`, {
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/categories/${id}`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,

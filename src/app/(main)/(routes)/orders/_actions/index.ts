@@ -24,6 +24,26 @@ export const getAllOrders = async () => {
     }
 }
 
+export const getSpecificOrder = async (id:number,token:string,business_id:number) => {
+    try {
+        // const session = await getServerAuthSession()
+        // const { token, business_id } = session?.user!
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/orders/${id}`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            params: {
+                business_id: business_id,
+                
+            },
+        })
+
+        return data.data
+    } catch (error) {
+        throw error
+    }
+}
 export const getSpecificUser = async (id: number) => {
     try {
         const session = await getServerAuthSession()

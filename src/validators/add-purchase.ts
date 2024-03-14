@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const brandFormSchema = z.object({
+export const purchaseFormSchema = z.object({
     supplier_id: z.string().min(1, { message: "Supplier is required." }),
     location_id: z.string().min(1, { message: "Location is required." }),
     tax_rate_id: z.string().min(1, { message: "Tax rate is required." }),
@@ -41,4 +41,4 @@ export const brandFormSchema = z.object({
 });
 
 // generate form types from zod validation schema
-export type AddBrandInput = z.infer<typeof brandFormSchema>;
+export type AddPurchaseInput = z.infer<typeof purchaseFormSchema>;

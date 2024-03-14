@@ -3,17 +3,17 @@ import { SubCategoryT } from "./_types";
 import CategoryTable from "./_components/subcategory-table";
 
 const page = async (props: any) => {
-  const { categoryID } = props.params || {};
-  const subcategories: SubCategoryT[] = await getAllSubCategories();
+  const { categoryID } = props?.params;
+  // console.log(categoryID, "categoryID");
+  const categoryId = parseInt(
+    decodeURIComponent(categoryID || "").match(/\d+/)?.[0] ?? "",
+    10
+  );
+  const subcategories: SubCategoryT[] = await getAllSubCategories(categoryId);
 
-  ////DECODING ID FROM URL
-  const categoryId =
-    parseInt(
-      decodeURIComponent(categoryID || "").match(/\d+/)?.[0] ?? "",
-      10
-    ) || null;
   ////FINDING RELEVANT OBJ IN REPONSE
   const category = subcategories.find((item) => item.id === categoryId);
+  // console.log(category, "category");
   const subCategory = category?.sub_category || [];
 
   return (

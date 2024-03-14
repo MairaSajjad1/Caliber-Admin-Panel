@@ -94,7 +94,7 @@ export const columns: ColumnDef<OrderT>[] = [
       <div>
         {row?.original && (
           <a
-            href={`/orders/OrderDetails/${row.getValue("id")}`}
+            href={`/orders/OrderDetails/id=${row.getValue("id")}`}
             className="text-black-500 hover:underline"
           >
             View Details

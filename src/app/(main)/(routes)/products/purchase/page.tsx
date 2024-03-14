@@ -1,6 +1,6 @@
 import { getAllPurchase } from "./_actions";
 import { PurchaseT } from "./_types";
-import BrandTable from "./_components/brand-table";
+import BrandTable from "./_components/purchase-table";
 
 const page = async () => {
   const purchases: PurchaseT[] = await getAllPurchase();

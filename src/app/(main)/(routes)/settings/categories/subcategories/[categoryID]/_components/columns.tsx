@@ -35,7 +35,7 @@ export const columns: ColumnDef<SubCategoryT>[] = [
         {row && row.original && (
           <Link
             href="/settings/categories/subcategories/[id]"
-            as={`/settings/categories/subcategories/${row.original.id}`}
+            as={`/settings/categories/subcategories/id=${row.original.id}`}
             className="text-black-500 hover:underline"
           >
             View Subcategory

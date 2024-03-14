@@ -1,6 +1,6 @@
 import { DataTable } from "@/components/table/data-table";
 import { PurchaseT } from "../_types";
-import AddPurchase from "./add-brand";
+import AddPurchase from "./add-purchase";
 import { columns } from "./columns";
 
 interface PurchaseTableProps {
