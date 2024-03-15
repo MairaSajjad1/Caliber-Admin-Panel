@@ -18,21 +18,21 @@ interface SelectedOption {
   value: string;
 }
 
-interface RiderCreateProps {
-  rider?: any; // Making rider property more flexible
-  searchParams: {
-    id: number;
-  };
-  riderId?: number | undefined;
-}
-
 // interface RiderCreateProps {
-//   rider?: RiderT  | undefined;
+//   rider?: any; // Making rider property more flexible
 //   searchParams: {
 //     id: number;
 //   };
-//   riderId?:number | undefined;
+//   riderId?: number | undefined;
 // }
+
+interface RiderCreateProps {
+  rider: RiderT  | undefined;
+  searchParams: {
+    id: number;
+  };
+  riderId?:number | undefined;
+}
 
 const RiderCreate: FC<RiderCreateProps> = (props) => {
   const { id } = props.searchParams || {};
