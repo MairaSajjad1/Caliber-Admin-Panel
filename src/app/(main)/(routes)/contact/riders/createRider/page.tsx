@@ -19,7 +19,7 @@ interface SelectedOption {
 }
 
 interface RiderCreateProps {
-  rider?: RiderT;
+  rider?: RiderT  | undefined;
   searchParams: {
     id: number;
   };
