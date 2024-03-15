@@ -23,7 +23,7 @@ interface Users {
   searchParams: {
     id: number;
   };
-  userId:number | undefined;
+  userId?:number | undefined;
 }
 
 const UserCreate: FC<Users> = (props) => {

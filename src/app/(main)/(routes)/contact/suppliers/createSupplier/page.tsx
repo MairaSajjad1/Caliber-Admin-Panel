@@ -23,7 +23,7 @@ interface Suppliers {
   searchParams: {
     id: number;
   };
-  supplierId:number | undefined;
+  supplierId?:number | undefined;
 }
 
 const SupplierCreate: FC<Suppliers> = (props) => {

@@ -23,7 +23,7 @@ interface RiderCreateProps {
   searchParams: {
     id: number;
   };
-  riderId:number | undefined;
+  riderId?:number | undefined;
 }
 
 const RiderCreate: FC<RiderCreateProps> = (props) => {
