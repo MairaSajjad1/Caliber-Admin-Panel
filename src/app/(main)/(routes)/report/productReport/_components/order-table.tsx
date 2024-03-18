@@ -11,7 +11,7 @@ const OrderTable = ({ orders }: OrderTableProps) => {
   return (
     <div>
       <DataTable
-        heading="Orders Report"
+        heading="Products Report"
         filterKey={"name"}
         data={orders}
         columns={columns}

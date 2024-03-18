@@ -158,12 +158,12 @@ const items = [
     parentId: "a5e60905-73fb-43eb-ac66-e701cbdeeeb8",
     href: "/settings/tax-rates",
   },
-  {
-    id: "f93e7f66-32a3-4070-894b-b40a48ce3912",
-    title: "Business",
-    parentId: "a5e60905-73fb-43eb-ac66-e701cbdeeeb8",
-    href: "/settings/business",
-  },
+  // {
+  //   id: "f93e7f66-32a3-4070-894b-b40a48ce3912",
+  //   title: "Business",
+  //   parentId: "a5e60905-73fb-43eb-ac66-e701cbdeeeb8",
+  //   href: "/settings/business",
+  // },
 ];
 
 interface ItemListProps {

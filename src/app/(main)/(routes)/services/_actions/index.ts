@@ -54,7 +54,7 @@ export const createService = async (serviceData: AddServiceInput, token: string)
         })
 
 
-        if (status === 201) {
+        if (status === 200) {
             return data.data
         } else {
             throw new Error("Something Went Wrong")

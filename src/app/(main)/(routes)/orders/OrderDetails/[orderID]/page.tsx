@@ -64,20 +64,20 @@ const OrderDetailsPage: FC<SpecificOrderProps> = (props) => {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Order No:</h3>
-          <h3>{order?.[0]?.order_no}</h3>
+          <h4>{order?.[0]?.order_no}</h4>
         </div>
 
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Payment Status:</h3>
-          <h3>{order?.[0]?.payment_status}</h3>
+          <h4>{order?.[0]?.payment_status}</h4>
         </div>
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Order Date:</h3>
-          <h3>{new Date(order?.[0]?.created_at).toDateString()}</h3>
+          <h4>{new Date(order?.[0]?.created_at).toDateString()}</h4>
         </div>
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Price:</h3>
-          <h3>{order?.[0]?.final_total}</h3>
+          <h4>{order?.[0]?.final_total}</h4>
         </div>
       </div>
 
@@ -90,11 +90,11 @@ const OrderDetailsPage: FC<SpecificOrderProps> = (props) => {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">product name:</h3>
-          <h3>{order?.[0]?.order_lines[0]?.product?.name}</h3>
+          <h4>{order?.[0]?.order_lines[0]?.product?.name}</h4>
         </div>
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Qty:</h3>
-          <h3>{order?.[0]?.order_lines[0]?.qty}</h3>
+          <h4>{order?.[0]?.order_lines[0]?.qty}</h4>
         </div>
       </div>
 
@@ -113,7 +113,7 @@ the below commented out fields cannot be shown because there concerned fields ar
         </div> */}
         <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Customer Phone</h3>
-          <h3>{order?.[0]?.customer?.mobile_no}</h3>
+          <h4>{order?.[0]?.customer?.mobile_no}</h4>
         </div>
         {/* <div className="flex items-center justify-between">
           <h3 className="text-lg text-[#080808]">Address:</h3>

@@ -92,7 +92,7 @@ const filesStatData = [
   },
   {
     id: 2,
-    title: "Users",
+    title: "Purchase",
     value: 224,
     fill: "#3872FA",
     chart: [
@@ -181,7 +181,7 @@ const filesStatData = [
   {
     id: 3,
     fill: "#3872FA",
-    title: "Categories",
+    title: "ProfitLoss",
     value: 123,
     engagementRate: 53.95,
     chart: [

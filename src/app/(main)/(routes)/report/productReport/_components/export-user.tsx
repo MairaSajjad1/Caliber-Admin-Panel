@@ -11,7 +11,7 @@ const AddUser = () => {
       color="primary"
       className={cn("h-auto  w-fit  shadow-button ")}
     >
-     Export Orders
+     Export Products
     </Button>
   );
 };
