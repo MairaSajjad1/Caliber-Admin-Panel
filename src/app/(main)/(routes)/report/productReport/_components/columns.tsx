@@ -87,20 +87,4 @@ export const columns: ColumnDef<OrderT>[] = [
       return value.includes(row.getValue(id));
     },
   },
-  {
-    accessorKey: "id",
-    header: "View Details",
-    cell: ({ row }) => (
-      <div>
-        {row?.original && (
-          <a
-            href={`/orders/details/${row.getValue("id")}`}
-            className="text-black-500 hover:underline"
-          >
-            View Details
-          </a>
-        )}
-      </div>
-    ),
-  },
 ];
