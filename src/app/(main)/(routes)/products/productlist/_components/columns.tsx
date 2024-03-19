@@ -7,6 +7,7 @@ import { EyeIcon } from "lucide-react";
 import DeletePopover from "@/components/table/delete-popover";
 import {ProductT } from "../_types";
 import { deleteProduct} from "../_actions";
+import EditProduct from "./edit-product";
 import dynamic from "next/dynamic";
 
 export const columns: ColumnDef<ProductT>[] = [
@@ -83,7 +84,7 @@ export const columns: ColumnDef<ProductT>[] = [
       };
       return (
         <div className="flex items-center justify-center gap-3">
-          {/* <EditBrand brand={row.original} /> */}
+          <EditProduct product={row.original} />
           <Tooltip
             size="sm"
             content={() => "View Product"}
