@@ -9,29 +9,29 @@ import dynamic from "next/dynamic";
 
 export const columns: ColumnDef<OrderT>[] = [
   {
-    accessorKey: "unit_price_exc_tax",
+    accessorKey: "order_no",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Unit_price_exc_tax" />
+      <DataTableColumnHeader column={column} title="Order_no" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex pl-2">
           <span className="max-w-[500px] capitalize truncate font-medium">
-            {row.getValue("unit_price_exc_tax")}
+            {row.getValue("order_no")}
           </span>
         </div>
       );
     },
   },
   {
-    accessorKey: "purchase_price",
+    accessorKey: "final_total",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Purchase_price" />
+      <DataTableColumnHeader column={column} title="Final_Total" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex  pl-2 items-center">
-          {row.getValue("purchase_price")}
+          {row.getValue("final_total")}
         </div>
       );
     },
@@ -40,14 +40,14 @@ export const columns: ColumnDef<OrderT>[] = [
     },
   },
   {
-    accessorKey: "total_Sell",
+    accessorKey: "order_type",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Total Sell" />
+      <DataTableColumnHeader column={column} title="Order Type" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex items-center pl-2 capitalize">
-          {row.getValue("total_Sell")}
+          {row.getValue("order_type")}
         </div>
       );
     },
@@ -56,14 +56,14 @@ export const columns: ColumnDef<OrderT>[] = [
     },
   },
   {
-    accessorKey: "Loss",
+    accessorKey: "order_status",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Loss " />
+      <DataTableColumnHeader column={column} title="Order Status " />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex items-center pl-2 capitalize">
-          {row.getValue("Loss")}
+          {row.getValue("order_status")}
         </div>
       );
     },
@@ -72,14 +72,14 @@ export const columns: ColumnDef<OrderT>[] = [
     },
   },
   {
-    accessorKey: "Profit",
+    accessorKey: "payment_status",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Profit" />
+      <DataTableColumnHeader column={column} title="Payment Status " />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex items-center pl-2 capitalize">
-          {row.getValue("Profit")}
+          {row.getValue("payment_status")}
         </div>
       );
     },
