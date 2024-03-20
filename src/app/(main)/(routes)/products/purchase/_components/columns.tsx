@@ -8,6 +8,7 @@ import DeletePopover from "@/components/table/delete-popover";
 import {PurchaseT } from "../_types";
 import { deletePurchase } from "../_actions";
 import dynamic from "next/dynamic";
+import EditPurchase from "./edit-purchase";
 
 export const columns: ColumnDef<PurchaseT>[] = [
   {
@@ -98,7 +99,7 @@ export const columns: ColumnDef<PurchaseT>[] = [
       };
       return (
         <div className="flex items-center justify-center gap-3">
-          {/* <EditBrand brand={row.original} /> */}
+          <EditPurchase purchase={row.original} />
           <Tooltip
             size="sm"
             content={() => "View Purchase"}

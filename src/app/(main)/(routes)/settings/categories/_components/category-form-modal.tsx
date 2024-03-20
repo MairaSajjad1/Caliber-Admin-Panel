@@ -2,12 +2,15 @@ import { useForm } from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import { AddCategoryInput, categoryFormSchema } from "@/validators/add-category";
+import {
+  AddCategoryInput,
+  categoryFormSchema,
+} from "@/validators/add-category";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { FC, useState } from "react";
 import { useSession } from "next-auth/react";
-import { createCategory, editCategory} from "../_actions";
+import { createCategory, editCategory } from "../_actions";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/components/modal/use-modal";
 import toast from "react-hot-toast";
@@ -33,13 +36,13 @@ const CategoryFormModal: FC<CategoryFormModalProps> = ({ category }) => {
     resolver: zodResolver(categoryFormSchema),
     defaultValues: {
       name: category?.name || "",
-      business_id : category?.business_id || business_id,
+      business_id: category?.business_id || business_id,
       created_by: category?.created_by || Number(session?.user?.customer_id),
     },
   });
   const onSubmit = async (data: AddCategoryInput) => {
     console.log("Button Clicked");
-   
+
     try {
       setLoading((loading) => !loading);
       category
@@ -53,7 +56,6 @@ const CategoryFormModal: FC<CategoryFormModalProps> = ({ category }) => {
             success: "Success",
             error: "Something Went Wrong",
           });
-          
 
       refresh();
       closeModal();
@@ -82,14 +84,14 @@ const CategoryFormModal: FC<CategoryFormModalProps> = ({ category }) => {
           error={errors?.name?.message}
         />
         <Button
-    color="primary"
-    className="shadow-button"
-    type="submit"
-    isLoading={loading}
-    // onClick={() => console.log('Button Clicked')}
->
-    {action}
-</Button>
+          color="primary"
+          className="shadow-button"
+          type="submit"
+          isLoading={loading}
+          // onClick={() => console.log('Button Clicked')}
+        >
+          {action}
+        </Button>
       </form>
     </div>
   );
