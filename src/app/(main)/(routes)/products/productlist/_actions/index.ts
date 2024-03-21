@@ -1,5 +1,5 @@
 import { getServerAuthSession } from "@/lib/auth"
-import { AddBrandInput } from "@/validators/add-brand"
+import { AddProductInput } from "@/validators/add-product"
 import axios from "axios"
 
 export const getAllProduct = async () => {
@@ -38,9 +38,34 @@ export const deleteProduct = async (id: number, token: string) => {
         throw error
     }
 }
+export const getSpecificProduct = async (
+    id: number,
+    token: string,
+    business_id: number
+  ) => {
+    try {
+      // const session = await getServerAuthSession()
+      // const { token, business_id } = session?.user!
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/products/${id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            business_id: business_id,
+          },
+        }
+      );
+      return data.data;
+    } catch (error) {
+      throw error;
+    }
+  };
 
-export const createProduct = async (brandData: AddBrandInput, token: string) => {
-    const { name, ...rest } = brandData
+export const createProduct = async (productData: AddProductInput, token: string) => {
+    const { name, ...rest } = productData
     const payload = {
        name: name,
         ...rest,
@@ -65,8 +90,8 @@ export const createProduct = async (brandData: AddBrandInput, token: string) => 
 }
 
 
-export const editProduct = async (brandData: AddBrandInput, id: number, token: string) => {
-    const { name,...rest } = brandData
+export const editProduct = async (productData: AddProductInput, id: number, token: string) => {
+    const { name,...rest } = productData
     const payload = {
         name: name,
         ...rest,
