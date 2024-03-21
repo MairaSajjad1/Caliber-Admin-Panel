@@ -1,17 +1,17 @@
 import { DataTable } from "@/components/table/data-table";
-import { OrderT } from "../_types";
+import { ReportData } from "../_types";
 import AddUser from "./export-user";
 import { columns } from "./columns";
 
 interface OrderTableProps {
-  orders: OrderT[];
+  orders: ReportData[];
 }
 
 const OrderTable = ({ orders }: OrderTableProps) => {
   return (
     <div>
       <DataTable
-        heading="Orders Report"
+        heading="Profit-Loss Report"
         filterKey={"name"}
         data={orders}
         columns={columns}

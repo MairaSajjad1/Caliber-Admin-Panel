@@ -121,12 +121,6 @@ const items = [
     parentId: "09007c1b-6537-4687-8bdc-c66f7c97943b",
     href: "/contact/suppliers",
   },
-  // {
-  //   id: "0c8670e4-8882-461e-946f-ef9548622438",
-  //   title: "Report",
-  //   parentId: undefined,
-  //   href: "/report",
-  // },
   {
     id: "bf1e0642-0d1c-4f34-9dd5-70f1c58b180e",
     title: "Reports",
@@ -156,13 +150,13 @@ const items = [
     id: "f35b72e3-4575-4e95-b61c-4941aa18dd54",
     title: "Purchase Report",
     parentId: "bf1e0642-0d1c-4f34-9dd5-70f1c58b180e",
-    href: "/reports/purchase",
+    href: "/reports/purchaseReport",
   },
   {
     id: "6a028b7c-42c4-4f14-956f-9f3c5ff9e91f",
     title: "ProfitLoss Report",
     parentId: "bf1e0642-0d1c-4f34-9dd5-70f1c58b180e",
-    href: "/reports/profitlossReport",
+    href: "/reports/profitLossReport",
   },
   {
     id: "a5e60905-73fb-43eb-ac66-e701cbdeeeb8",

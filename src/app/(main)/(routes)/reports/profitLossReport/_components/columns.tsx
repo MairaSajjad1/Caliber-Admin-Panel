@@ -1,37 +1,36 @@
 "use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 
 import { DataTableColumnHeader } from "@/components/table/data-table-column-header";
 import { Tooltip } from "@/components/ui/tooltip";
-import { OrderT } from "../_types";
+import { ReportData } from "../_types";
 import dynamic from "next/dynamic";
 
-export const columns: ColumnDef<OrderT>[] = [
+export const columns: ColumnDef<ReportData>[] = [
   {
-    accessorKey: "order_no",
+    accessorKey: "unit_price_before_discount",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Order_no" />
+      <DataTableColumnHeader column={column} title="unit_price_before_discount" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex pl-2">
           <span className="max-w-[500px] capitalize truncate font-medium">
-            {row.getValue("order_no")}
+            {row.getValue("unit_price_before_discount")}
           </span>
         </div>
       );
     },
   },
   {
-    accessorKey: "final_total",
+    accessorKey: "total_Sell",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Final_Total" />
+      <DataTableColumnHeader column={column} title="total_Sell" />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex  pl-2 items-center">
-          {row.getValue("final_total")}
+          {row.getValue("total_Sell")}
         </div>
       );
     },
@@ -40,46 +39,14 @@ export const columns: ColumnDef<OrderT>[] = [
     },
   },
   {
-    accessorKey: "order_type",
+    accessorKey: "line_discount_amount",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Order Type" />
+      <DataTableColumnHeader column={column} title="line_discount_amount " />
     ),
     cell: ({ row }) => {
       return (
         <div className="flex items-center pl-2 capitalize">
-          {row.getValue("order_type")}
-        </div>
-      );
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id));
-    },
-  },
-  {
-    accessorKey: "order_status",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Order Status " />
-    ),
-    cell: ({ row }) => {
-      return (
-        <div className="flex items-center pl-2 capitalize">
-          {row.getValue("order_status")}
-        </div>
-      );
-    },
-    filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id));
-    },
-  },
-  {
-    accessorKey: "payment_status",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Payment Status " />
-    ),
-    cell: ({ row }) => {
-      return (
-        <div className="flex items-center pl-2 capitalize">
-          {row.getValue("payment_status")}
+          {row.getValue("line_discount_amount")}
         </div>
       );
     },

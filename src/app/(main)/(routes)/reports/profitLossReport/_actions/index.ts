@@ -6,7 +6,7 @@ export const getAllOrders = async () => {
     try {
         const session = await getServerAuthSession()
         const { token, business_id, customer_id} = session?.user!
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/order/report?`, {
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/profit-loss-report?`, {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
