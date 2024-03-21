@@ -6,8 +6,6 @@ import { ActionIcon } from "@/components/ui/action-icon";
 import { EyeIcon } from "lucide-react";
 import DeletePopover from "@/components/table/delete-popover";
 import {LocationT } from "../_types";
-// import { deleteTax } from "../_actions";
-// import EditTax from "./edit-tax";
 import dynamic from "next/dynamic";
 
 export const columns: ColumnDef<LocationT>[] = [
@@ -86,43 +84,4 @@ export const columns: ColumnDef<LocationT>[] = [
       );
     },
   },
-
-  // {
-  //   // accessorKey: "id",
-  //   id: "actions",
-  //   cell: ({ row }) => {
-  //     const onDeleteItem = async (id: number, token: string) => {
-  //       try {
-  //         await deleteTax(Number(id), token);
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     };
-  //     return (
-  //       <div className="flex items-center justify-center gap-3">
-  //         <EditTax tax={row.original} />
-  //         <Tooltip
-  //           size="sm"
-  //           content={() => "View Tax"}
-  //           placement="top"
-  //           color="invert"
-  //         >
-  //           <ActionIcon
-  //             tag="span"
-  //             size="sm"
-  //             variant="outline"
-  //             className="hover:!border-gray-900 hover:text-gray-700"
-  //           >
-  //             <EyeIcon className="h-4 w-4" />
-  //           </ActionIcon>
-  //         </Tooltip>
-  //         <DeletePopover
-  //           title={`Delete the Tax`}
-  //           description={`Are you sure you want to delete this Tax?`}
-  //           onDelete={(token: string) => onDeleteItem(row.original.id, token)}
-  //         />
-  //       </div>
-  //     );
-  //   },
-  // },
 ];
